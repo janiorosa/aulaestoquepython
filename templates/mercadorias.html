@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2>Mercadorias</h2>
+<a href="/mercadorias/nova">Nova Mercadoria</a>
+<table>
+<tr> <th>Produto</th> <th>Categoria</th> 
+<th>Fornecedor</th> <th>Preço de Venda</th>
+</tr>
+{% for merc in lista %}
+<tr>
+<td> {{merc.nome_produto}} </td>
+<td> {{merc.categoria}} </td>
+<td> {{merc.nome_fantasia}} </td>
+<td> {{merc.preco_venda_sugerido}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

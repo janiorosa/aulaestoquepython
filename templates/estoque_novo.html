@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2> Estoque - Inserção </h2>
+<form method="POST" action="/estoque/inserir">
+<p>Mercadoria: <select name="id_mercadoria">
+{% for m in mercadorias %}
+<option value="{{m.id_mercadoria}}">{{m.nome_produto}}</option>
+{% endfor %} </select> </p>
+<p>Quant. atual: <input name="quantidade_atual"/></p>
+<p>Quant. Mínima: <input name="quantidade_minima"/></p>
+<p> Localização:
+<select name="localizacao_corredor">
+{% for local in localizacoes %}
+<option value="{{local}}">{{local}}</option>
+{% endfor %} </select> </p>
+<p>Lote: <input name="lote"/></p>
+<p>Usuário:<input name="usuario_atualizacao"/></p>
+<button type="submit">Gravar Dados</button>
+</form>
+{% endblock %}

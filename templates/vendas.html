@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2>Vendas</h2>
+<a href="/vendas/nova">Nova Venda</a>
+<table>
+<tr> <th>Produto</th><th>Quant.:</th><th>Preço:</th>
+<th>Vendedor</th><th>Pagamento</th><th>Total Venda:</th>
+</tr>
+{% for venda in lista %}
+<tr>
+<td> {{venda.nome_produto}} </td>
+<td> {{venda.quantidade_vendida}} </td>
+<td> {{venda.preco_unitario_praticado}} </td>
+<td> {{venda.usuario_vendedor}} </td>
+<td> {{venda.forma_pagamento}} </td>
+<td> {{venda.quantidade_vendida * venda.preco_unitario_praticado}} </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

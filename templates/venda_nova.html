@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2>Venda:</h2>
+<form method="post" action="/vendas/gravar"/>
+<p>Mercadoria: 
+<select name="id_mercadoria">
+{% for atual in lista %}
+<option value="{{atual.id_mercadoria}}">
+{{atual.nome_produto}}</option>
+{% endfor %}
+</select>
+</p>
+<p>Quantidade: <input name="quantidade" id="quantidade" oninput="calcTotal()"></p> 
+<p>Preço Unitário: <input name="preco_unitario" id="preco_unitario" oninput="calcTotal()"></p> 
+<p>Desconto: <input name="desconto"></p> 
+<p>Vendedor: <input name="usuario"></p> 
+<p>Canal da Venda: <input name="canal_venda"></p> 
+<p>Forma de Pagamento: <input name="forma_pagamento"></p> 
+<p>Total da Venda: <input name="total" id="total" ></p>
+<button type="submit">Salvar</button>
+</form>
+<script>
+function calcTotal(){
+	let quant = parseFloat(document.getElementById("quantidade").value) || 0;
+	let precoUnit = parseFloat(document.getElementById("preco_unitario").value) || 0;
+	let total = quant * precoUnit;
+	document.getElementById("total").value = total.toFixed(2);
+}
+</script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2>Fornecedores</h2>
+<a href="/fornecedores/novo"> Novo Fornecedor</a>
+<table>
+<tr> <th>ID</th> <th>Nome Fantasia</th>
+<th>Cidade</th></tr>
+{% for atual in lista_fornecedores %}
+<tr>
+<td> {{atual.id_fornecedor}} </td>
+<td> {{atual.nome_fantasia}} </td>
+<td> {{atual.cidade}} </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

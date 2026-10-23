@@ -1,0 +1,17 @@
+<!doctype html> 
+<html> 
+<head><title>Controle de Estoque</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='vendas.css') }}">
+</head>
+<body>
+<h1>Controle de Estoque</h1>
+<nav><a href="/"</a> <br/>
+<a href="/fornecedores">Fornecedores</a>
+<a href="/mercadorias">Mercadorias</a>
+<a href="/vendas">Vendas</a>
+<a href="/estoque">Estoque</a>
+</nav>
+{% block conteudo %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<form method="post" action="/fornecedores/inserir">
+<p>Nome fantasia: <input name="nome_fantasia"/> </p>
+<p>Razão Social: <input name="razao_social"/> </p>
+<p>CNPJ: <input name="cnpj"/> </p>
+<p>Telefone: <input name="telefone"/> </p>
+<p>Email: <input name="email"/> </p>
+<p>Cidade: <input name="cidade"/> </p>
+<p>Estado: <input name="estado"/> </p>
+<br/>
+<button type="submit">Salvar</button>
+</form>
+{% endblock %}

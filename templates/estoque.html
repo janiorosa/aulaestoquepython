@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+{%with m = get_flashed_messages(with_categories=true)%}
+    {%for categoria, mensagem in m %}
+	    <p>{{ mensagem }}</p>
+    {%endfor%}
+{%endwith%}
+<h2>Estoque</h2>
+<p> <a href='/estoque/novo'>Inserir Estoque</a> </p>
+<table>
+<tr>
+<th>ID</th><th>Quant. Atual:</th><th>Quant. Mínima</th>
+<th>Local</th><th>Lote</th><th>Usuário</th>
+</tr>
+{% for atual in lista %}
+<tr> 
+<td>{{atual.id_estoque}}</td><td>{{atual.quantidade_atual}}</td>
+<td>{{atual.quantidade_minima}}</td>
+<td>{{atual.localizacao_corredor}}</td>
+<td>{{atual.lote}}</td><td>{{atual.usuario_atualizacao}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

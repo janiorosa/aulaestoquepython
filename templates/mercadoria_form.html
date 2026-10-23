@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2>Mercadorias - Cadastro </h2>
+<form method="POST" action="/mercadorias/inserir">
+<p>Produto: <input name="nome_produto"/> </p>
+<p>Categoria: <input name="categoria"/> </p>
+<p>Preço de Custo: <input name="preco_custo"/> </p>
+<p>Preço de Venda: <input name="preco_venda"/> </p>
+<p>Código de Barras: <input name="codigo_barras"/></p>
+<p>Fornecedor:
+<select name="id_fornecedor">
+{% for f in lista %}
+<option value="{{f.id_fornecedor}}">{{f.nome_fantasia}}
+</option>
+{% endfor %}
+</select>
+</p>
+<button type="submit">Gravar Dados</button>
+</form>
+{% endblock %}
