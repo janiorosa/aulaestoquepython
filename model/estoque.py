@@ -16,3 +16,27 @@ def inserir(id_m,q_atual,q_minima,local,lote,u):
         with conexao.cursor() as cursor:
             cursor.execute(sql,(id_m,q_atual,q_minima,local,lote,u))
         conexao.commit()
+
+
+def relatorio(fornecedor):
+    sql = """
+        SELECT
+            nome_fantasia,
+            nome_produto,
+            id_mercadoria,
+            quantidade_atual,
+            quantidade_minima,
+            localizacao,
+            lote
+        FROM controlemerc.visao_rel_estoque
+        WHERE (%s = '' OR nome_fantasia LIKE %s)
+        ORDER BY nome_fantasia, nome_produto
+    """
+
+    with obter_conexao() as conexao:
+        with conexao.cursor() as cursor:
+            cursor.execute(sql, (
+                fornecedor,
+                '%' + fornecedor + '%'
+            ))
+            return cursor.fetchall()

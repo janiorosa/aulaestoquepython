@@ -7,6 +7,10 @@ from controller.fornecedores import registrar_rotas as registrar_fornecedores
 from controller.mercadorias import registrar_rotas as registrar_mercadorias
 from controller.vendas import registrar_rotas as registrar_vendas
 from controller.estoque import registrar_rotas as registrar_estoque
+from controller.rel_estoque import registrar_rotas as registrar_rel_estoque
+from controller.rel_vendas import registrar_rotas as registrar_rel_vendas
+
+
 app=Flask(__name__)
 app.secret_key="alkjoqiuwer02198"
 
@@ -18,5 +22,8 @@ registrar_fornecedores(app)
 registrar_mercadorias(app)
 registrar_vendas(app)
 registrar_estoque(app)
+registrar_rel_estoque(app)
+registrar_rel_vendas(app)
+
 if __name__=="__main__":
     app.run(host="0.0.0.0",debug=True)

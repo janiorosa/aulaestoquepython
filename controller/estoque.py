@@ -33,4 +33,4 @@ def registrar_rotas(app):
         model.estoque.inserir(id_m,q_atual,q_minima,local,lote,u)
         flash("Estoque cadastrado com sucesso!")
         return redirect("/estoque")
-        
+

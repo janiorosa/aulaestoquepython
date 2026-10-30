@@ -1,0 +1,41 @@
+
+<!-- templates/rel_estoque.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Estoque</title>
+</head>
+
+<body>
+
+    <h1>Relatório de Estoque</h1>
+
+    <form action="/relatorio/estoque/pdf"
+          method="GET"
+          target="_blank">          
+
+        <label for="fornecedor">Fornecedor:</label>
+
+        <input
+            type="text"
+            id="fornecedor"
+            name="fornecedor"
+            placeholder="Digite o nome do fornecedor">
+
+        <br><br>
+
+        <button type="submit">
+            Gerar Relatório PDF
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Voltar ao menu principal</a>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+<!-- templates/rel_vendas.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Vendas</title>
+</head>
+
+<body>
+
+    <h1>Relatório de Vendas</h1>
+
+    <form action="/relatorio/vendas/pdf"
+          method="GET"
+          target="_blank">
+
+        <label for="data_inicial">Data inicial:</label>
+
+        <input
+            type="date"
+            id="data_inicial"
+            name="data_inicial">
+
+        <br><br>
+
+        <label for="data_final">Data final:</label>
+
+        <input
+            type="date"
+            id="data_final"
+            name="data_final">
+
+        <br><br>
+
+        <button type="submit">
+            Gerar Relatório PDF
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Voltar ao menu principal</a>
+
+</body>
+</html>

@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-<h2> Sistema de Controle de Estoque</h2>
-<ul><li> 
-<a href="/fornecedores">Fornecedores</a> | 
-<a href="/mercadorias">Mercadorias</a>
-<a href="/vendas">Vendas</a>
-<a href="/estoque">Estoque</a>
-</li>
+<h2>Sistema de Controle de Estoque</h2>
+<ul>
+    <li>
+        <a href="/fornecedores">Fornecedores</a> |
+        <a href="/mercadorias">Mercadorias</a> |
+        <a href="/vendas">Vendas</a> |
+        <a href="/estoque">Estoque</a>
+    </li>
+</ul>
+<h3>Relatórios em PDF</h3>
+<ul>
+    <li>
+        <a href="/relatorio/estoque">Relatório de Estoque</a>
+    </li>
+    <li>
+        <a href="/relatorio/vendas">Relatório de Vendas</a>
+    </li>
 </ul>
 {% endblock %}
