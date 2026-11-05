@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h1> Relatório de Vendas</h1>
+<form method='get' action="/relatorio/relvendas">
+    <label>Data Inicial: </label>
+	<input type="date" id="data_inicial" name="data_inicial"
+	value="{{ data_inicial }}"/>
+	<label> Data Final: </label>
+	<input type="date" id="data_final" name="data_final"
+	value="{{ data_final }}"/>
+	<button type="submit">Gerar Relatório</button>
+</form>
+<p> Período: {{data_inicial}} até {{data_final}}</p>
+<table border="1">
+<tr><th>Fornecedor</th><th>Produto</th><th>Quant.</th>
+<th>Preço</th><th>Desconto</th><th>Data</th>
+<th>Canal</th><th>Forma Pagto</th></tr>
+{% for linha in dados %}
+<tr>
+<td>{{linha["nome_fantasia"]}}</td>
+<td>{{linha["produto"]}}</td>
+<td>{{linha["quantidade_vendida"]}}</td>
+<td>{{linha["preco"]}}</td>
+<td>{{linha["desconto_aplicado"]}}</td>
+<td>{{linha["data_venda"]}}</td>
+<td>{{linha["canal_venda"]}}</td>
+<td>{{linha["pagto"]}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

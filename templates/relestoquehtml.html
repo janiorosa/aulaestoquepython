@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h1> Relatório de Estoque</h1>
+<table border="1">
+<tr> <th>Fornecedor</th><th>Produto</th><th>Código</th>
+<th>Quant. </th><th>Quant. Mínima</th><th>Local</th>
+<th>Lote</th> </tr> 
+{% for linha in dados %}
+<tr>
+<td>{{linha["nome_fantasia"]}}</td>
+<td>{{linha["nome_produto"]}}</td>
+<td>{{linha["id_mercadoria"]}}</td>
+<td>{{linha["quantidade_autal"]}}</td>
+<td>{{linha["quantidade_minima"]}}</td>
+<td>{{linha["localizacao"]}}</td>
+<td>{{linha["lote"]}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
